@@ -1,0 +1,7 @@
+int64 drone_id
+float64 position_x
+float64 position_y
+float64 position_z
+float64 battery_percentage
+bool is_leader
+string status_message
