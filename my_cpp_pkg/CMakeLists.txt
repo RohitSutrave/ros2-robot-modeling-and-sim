@@ -35,6 +35,16 @@ ament_target_dependencies(drone_sub_node rclcpp my_robot_interfaces)
 add_executable(reset_counter_client_node src/reset_counter_client.cpp)
 ament_target_dependencies(reset_counter_client_node rclcpp my_robot_interfaces)
 
+add_executable(
+  number_publisher_param_node
+  src/number_publisher_param.cpp
+)
+ament_target_dependencies(
+  number_publisher_param_node
+  rclcpp
+  example_interfaces
+)
+
 
 # 4. Install ALL targets
 install(TARGETS
@@ -43,6 +53,7 @@ install(TARGETS
   cpp_sub
   drone_sub_node
   reset_counter_client_node
+  number_publisher_param_node
           # <-- Add your new executable name here
   DESTINATION lib/${PROJECT_NAME}
 )

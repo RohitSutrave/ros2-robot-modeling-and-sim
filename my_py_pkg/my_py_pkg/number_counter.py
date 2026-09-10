@@ -7,7 +7,6 @@ class NumberCounterNode(Node):
     def __init__(self):
         super().__init__("number_counter")
         self.counter_ = 0
-        
         # Topic Subscriber
         self.number_subscriber_ = self.create_subscription(
             Int64, "Num", self.callback_number, 10
@@ -16,7 +15,7 @@ class NumberCounterNode(Node):
         # Service Server
         self.reset_counter_service_ = self.create_service(
             ResetCounter, "reset_counter", self.callback_reset_counter
-        )
+        ) 
         
         self.get_logger().info("Number Counter Server Node initialized.")
 

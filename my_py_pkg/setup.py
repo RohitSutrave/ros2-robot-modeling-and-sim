@@ -32,6 +32,9 @@ setup(
             "number_counter_srv_node = my_py_pkg.number_counter:main",
             "reset_counter_client_node = my_py_pkg.reset_counter_client:main",
             "challange1_node = my_py_pkg.challange1:main",
+            "count_until_server_minimal_node = my_py_pkg.count_until_server_minimal:main",
+            "number_publisher_param_node = my_py_pkg.number_publisher_param:main",
+            
         ],
     },
 )
