@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="my_py_pkg" exec="pub_node"/>
+    <node pkg="my_cpp_pkg" exec="cpp_sub"/>
+</launch>

@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="my_cpp_pkg" exec="drone_vision_node">
+        <param name="confidence_threshold" value="0.75"/>
+        <param name="enable_gui" value="false"/>
+    </node>
+</launch>

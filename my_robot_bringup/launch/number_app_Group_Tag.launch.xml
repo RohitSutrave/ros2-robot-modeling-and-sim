@@ -1,0 +1,15 @@
+<launch>
+    <!-- Drone 1 Subsystem -->
+    <group>
+        <push-ros-namespace namespace="drone_1"/>
+        <node pkg="my_py_pkg" exec="pub_node"/>
+        <node pkg="my_cpp_pkg" exec="cpp_sub"/>
+    </group>
+
+    <!-- Drone 2 Subsystem -->
+    <group>
+        <push-ros-namespace namespace="drone_2"/>
+        <node pkg="my_py_pkg" exec="pub_node"/>
+        <node pkg="my_cpp_pkg" exec="cpp_sub"/>
+    </group>
+</launch>

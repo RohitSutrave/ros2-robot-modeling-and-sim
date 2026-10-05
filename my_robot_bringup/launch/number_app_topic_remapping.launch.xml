@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="my_py_pkg" exec="pub_node">
+        <!-- Changes the internal 'num' topic to a global telemetry topic -->
+        <remap from="num" to="/swarm/global_telemetry"/>
+    </node>
+</launch>

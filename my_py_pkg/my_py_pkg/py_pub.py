@@ -7,7 +7,7 @@ class NumPubNode(Node):
         super().__init__("py_num_pub")
         self.get_logger().info("Hello Ros2")
 
-        self.publisher_= self.create_publisher(Int64,"Num",10)
+        self.publisher_= self.create_publisher(Int64,"num",10)
         self.counter_=0
         self.timer_ = self.create_timer(1.0, self.pub_num)
 

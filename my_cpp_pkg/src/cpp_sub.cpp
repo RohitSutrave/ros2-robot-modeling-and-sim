@@ -20,7 +20,7 @@ public:
     // Queue size: 10
     // Callback: topic_callback (bound to this class instance)
     subscription_ = this->create_subscription<example_interfaces::msg::Int64>(
-      "Num", 10, std::bind(&NumberCounterNode::topic_callback, this, _1));
+      "num", 10, std::bind(&NumberCounterNode::topic_callback, this, _1));
 
     RCLCPP_INFO(this->get_logger(), "C++ Number counter has been started.");
   }

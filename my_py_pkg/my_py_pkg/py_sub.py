@@ -13,7 +13,7 @@ class NumberCounterNode(Node):
         # create_subscription(Interface, topic_name, callback, queue_size)
         self.subscriber_ = self.create_subscription(
             Int64, 
-            'Num', 
+            'num', 
             self.callback_number, 
             10
         )
