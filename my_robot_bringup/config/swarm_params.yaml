@@ -1,0 +1,9 @@
+/drone_1_pub:
+  ros__parameters:
+    start_number: 3
+    publish_period: 0.5
+
+/drone_2_pub:
+  ros__parameters:
+    start_number: 4
+    publish_period: 1.0

@@ -1,0 +1,23 @@
+<launch>
+    <!-- Drone 1 Subsystem -->
+    <group>
+        <push-ros-namespace namespace="drone_1"/>
+        
+        <node pkg="my_py_pkg" exec="pub_node" name="telemetry_pub">
+            <param from="$(find-pkg-share my_robot_bringup)/config/swarm_params.yaml" />
+        </node>
+        
+        <node pkg="my_cpp_pkg" exec="cpp_sub" name="telemetry_sub"/>
+    </group>
+
+    <!-- Drone 2 Subsystem -->
+    <group>
+        <push-ros-namespace namespace="drone_2"/>
+        
+        <node pkg="my_py_pkg" exec="pub_node" name="telemetry_pub">
+            <param from="$(find-pkg-share my_robot_bringup)/config/swarm_params.yaml" />
+        </node>
+        
+        <node pkg="my_cpp_pkg" exec="cpp_sub" name="telemetry_sub"/>
+    </group>
+</launch>

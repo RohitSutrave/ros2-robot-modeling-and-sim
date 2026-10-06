@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="swan_drone">
+
+    <!-- Define standard colors at the top of the file -->
+    <material name="carbon_fiber">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+
+    <link name="base_link">
+        <visual>
+            <!-- Z-offset shifts the mesh so the drone's true CG sits at the link origin -->
+            <origin xyz="0 0 -0.05" rpy="0 0 0" />
+            
+            <geometry>
+                <!-- Loading the custom CAD chassis from your workspace -->
+                <mesh filename="package://my_robot_description/meshes/drone_chassis.stl" scale="1 1 1"/>
+            </geometry>
+            
+            <!-- Applying the color defined above -->
+            <material name="carbon_fiber"/>
+        </visual>
+    </link>
+
+</robot>
