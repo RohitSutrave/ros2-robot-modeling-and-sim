@@ -1,24 +1,65 @@
 <?xml version="1.0"?>
-<robot name="swan_drone">
 
-    <!-- Define standard colors at the top of the file -->
-    <material name="carbon_fiber">
-        <color rgba="0.2 0.2 0.2 1.0"/>
+<robot name="my_robot">
+
+    <!-- ========================= -->
+    <!-- MATERIALS -->
+    <!-- ========================= -->
+
+    <material name="green">
+        <color rgba="0 0.6 0 1"/>
     </material>
 
+    <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+    </material>
+
+
+    <!-- ========================= -->
+    <!-- BASE LINK -->
+    <!-- ========================= -->
+
     <link name="base_link">
+
         <visual>
-            <!-- Z-offset shifts the mesh so the drone's true CG sits at the link origin -->
-            <origin xyz="0 0 -0.05" rpy="0 0 0" />
-            
+
             <geometry>
-                <!-- Loading the custom CAD chassis from your workspace -->
-                <mesh filename="package://my_robot_description/meshes/drone_chassis.stl" scale="1 1 1"/>
+                <box size="0.6 0.4 0.2"/>
             </geometry>
-            
-            <!-- Applying the color defined above -->
-            <material name="carbon_fiber"/>
+
+            <!-- Put bottom of box at link origin -->
+            <origin
+                xyz="0 0 0.1"
+                rpy="0 0 0"/>
+
+            <material name="green"/>
+
+        </visual>
+
+    </link>
+
+    <!-- ========================= -->
+    <!-- right_wheel_link -->
+    <!-- ========================= -->
+
+
+    <link name="right_wheel_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="gray" />
         </visual>
     </link>
+
+
+
+    <joint name="base_right_wheel_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="right_wheel_link" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
 
 </robot>
